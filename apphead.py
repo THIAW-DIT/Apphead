@@ -1,13 +1,14 @@
 # import libraries
+import streamlit as st
 import pandas as pd
-# import seaborn as sns
+import seaborn as sns
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import  f1_score, precision_score, recall_score, accuracy_score
 import matplotlib.pyplot as plt
-import streamlit as st
+
 
 # Function to load data (5 pts)
 def load_data(file_path):
@@ -42,7 +43,7 @@ data_p.head(5)
 plt.figure(figsize = (14,7))
 sns.boxplot(data = data_p)
 plt.grid()
-plt.show() 
+plt.show()
     
 Y = data_p['Outcome']
 X = data_p.drop(['Outcome'], axis = 1)
